@@ -22,8 +22,6 @@ class HTTPClient {
     .all()
     .contentType(ContentType.JSON)
     .when()
-    .post(resourceURL)
+    .post(baseURI + resourceURL)
   }
-
-
 }

@@ -6,40 +6,38 @@ class TestDataBuilder {
    * In this class you will have to write methods that will returns the objects that you want to use in your requests
    */
 
-
-  static String userToDo(int userId, String title, boolean completed) {
+  static String userToDo(def todo) {
     return "  {\n" +
-      "    \"userId\": " + userId + ",\n" +
-      "    \"title\": \"" + title + "\",\n" +
-      "    \"completed\": " + completed + "\n" +
+      "    \"userId\": " + todo.userId + ",\n" +
+      "    \"title\": \"" + todo.title + "\",\n" +
+      "    \"completed\": " + todo.completed + "\n" +
       "  }"
   }
 
   //Complete the user like the ToDos above
 
-  static String user(String name, String userName, String email) {
+  static String user(def testUser) {
     return " {\n" +
-      "    \"name\": " + name + ",\n" +
-      "    \"username\": " + userName + ",\n" +
-      "    \"email\": " + email + ",\n" +
+      "    \"name\": \"" + testUser.name + "\",\n" +
+      "    \"username\": \"" + testUser.username + "\",\n" +
+      "    \"email\": \"" + testUser.email + "\",\n" +
       "    \"address\": {\n" +
-      "      \"street\": \"Kulas Light\",\n" +
-      "      \"suite\": \"Apt. 556\",\n" +
-      "      \"city\": \"Gwenborough\",\n" +
-      "      \"zipcode\": \"92998-3874\",\n" +
+      "      \"street\": \"" + testUser.address.street + "\",\n" +
+      "      \"suite\": \"" + testUser.address.suite + "\",\n" +
+      "      \"city\": \"" + testUser.address.city + "\",\n" +
+      "      \"zipcode\": \"" + testUser.address.zipcode + "\",\n" +
       "      \"geo\": {\n" +
-      "        \"lat\": \"-37.3159\",\n" +
-      "        \"lng\": \"81.1496\"\n" +
+      "        \"lat\": \"" + testUser.address.geo.lat + "\",\n" +
+      "        \"lng\": \"" + testUser.address.geo.lng + "\"\n" +
       "      }\n" +
       "    },\n" +
-      "    \"phone\": \"1-770-736-8031 x56442\",\n" +
-      "    \"website\": \"hildegard.org\",\n" +
+      "    \"phone\": \"" + testUser.phone + "\",\n" +
+      "    \"website\": \"" + testUser.website + "\",\n" +
       "    \"company\": {\n" +
-      "      \"name\": \"Romaguera-Crona\",\n" +
-      "      \"catchPhrase\": \"Multi-layered client-server neural-net\",\n" +
-      "      \"bs\": \"harness real-time e-markets\"\n" +
+      "      \"name\": \"" + testUser.company.name + "\",\n" +
+      "      \"catchPhrase\": \"" + testUser.company.catchPhrase + "\",\n" +
+      "      \"bs\": \"" + testUser.company.bs + "\"\n" +
       "    }\n" +
       "  }"
   }
-
 }
